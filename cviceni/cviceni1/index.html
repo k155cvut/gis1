@@ -1,0 +1,1107 @@
+
+<!doctype html>
+<html lang="cs" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../cviceni2/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Cvičení 1 - 155GIS1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uvod-do-prace-v-prostredi-arcgis-prostorova-data-datove-zdroje" class="md-skip">
+          Přeskočit obsah
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Záhlaví">
+    <a href="../.." title="155GIS1" class="md-header__button md-logo" aria-label="155GIS1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            155GIS1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cvičení 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hledat" placeholder="Hledat" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Vyhledávání">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Vyčistit" aria-label="Vyčistit" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializace vyhledávání
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Karty" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Charakterisika předmětu
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Cvičení
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../data/" class="md-tabs__link">
+      Data
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../hodnoceni/" class="md-tabs__link">
+      Hodnocení
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../semestralka/" class="md-tabs__link">
+      Semestrální práce
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../videa/" class="md-tabs__link">
+      Výuková videa
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigace" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="155GIS1" class="md-nav__button md-logo" aria-label="155GIS1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    155GIS1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Charakterisika předmětu
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Cvičení
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cvičení
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cvičení 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Cvičení 1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cil-cviceni" class="md-nav__link">
+    Cíl cvičení
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zakladni-pojmy" class="md-nav__link">
+    Základní pojmy
+  </a>
+  
+    <nav class="md-nav" aria-label="Základní pojmy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software-pro-vyuku" class="md-nav__link">
+    Software pro výuku
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prostorova-gis-data" class="md-nav__link">
+    Prostorová (GIS) data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napln-cviceni" class="md-nav__link">
+    Náplň cvičení
+  </a>
+  
+    <nav class="md-nav" aria-label="Náplň cvičení">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spusteni-a-zakladni-orientace-v-programu" class="md-nav__link">
+    Spuštění a základní orientace v programu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pridani-dat-do-mapy" class="md-nav__link">
+    Přidání dat do mapy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kde-ziskat-data" class="md-nav__link">
+    Kde získat data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ovladani-mapy" class="md-nav__link">
+    Ovládání mapy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uloha-dodelat" class="md-nav__link">
+    Úloha (DODĚLAT!!)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni2/" class="md-nav__link">
+        Cvičení 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni3/" class="md-nav__link">
+        Cvičení 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni4/" class="md-nav__link">
+        Cvičení 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni5/" class="md-nav__link">
+        Cvičení 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni6/" class="md-nav__link">
+        Cvičení 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni7/" class="md-nav__link">
+        Cvičení 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni8/" class="md-nav__link">
+        Cvičení 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni9/" class="md-nav__link">
+        Cvičení 9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni10/" class="md-nav__link">
+        Cvičení 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni11/" class="md-nav__link">
+        Cvičení 11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cviceni12/" class="md-nav__link">
+        Cvičení 12
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hodnoceni/" class="md-nav__link">
+        Hodnocení
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semestralka/" class="md-nav__link">
+        Semestrální práce
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videa/" class="md-nav__link">
+        Výuková videa
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<style>
+  .md-typeset__scrollwrap {text-align: center;}                                                      /* Zarovnani tabulek na stred */
+  /* tbody {width: 100%;display: table;}                                                             /* Roztazeni tabulek na celou sirku */
+  h2 {font-weight:700 !important;}                                                                   /* Pokus – zmena formatu nadpisu 2 */
+  figcaption {font-size:12px;margin-top:5px !important;text-align:center;line-height:1.2em;}         /* Formatovani Popisku obrazku */
+  hr.l1 {background-color:var(--md-primary-fg-color);height:2px;margin-bottom:3em !important;}       /* Formatovani Break Line – LEVEL 1 */
+  /* img,iframe {box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.2) !important;} /* Stin pod obrazky a videi */
+  img,iframe {filter:drop-shadow(0 10px 16px rgba(0,0,0,0.2)) drop-shadow(0 6px 20px rgba(0,0,0,0.2)) !important; object-fit:contain;} /* Stin pod obrazky a videi */
+
+  /* TLACITKA */
+  .md-button {text-align:center;transition: all .1s ease-in-out !important;}  /* Button – zarovnani textu */
+  .md-button:hover {transform: scale(1.04);opacity:.8;background-color:var(--md-primary-fg-color) !important;border-color:var(--md-primary-fg-color) !important;color:var(--md-primary-bg-color) !important;/*filter: brightness(80%);*/}            /* Button Hover – animace zvetseni a zmeny barvy */
+  .md-button:focus {opacity:.8;background-color:var(--md-primary-fg-color) !important;border-color:var(--md-primary-fg-color) !important;color:var(--md-primary-bg-color) !important;}                                                                /* Button Focus – stejny vzhled jako hover */
+  .url-name {line-height:1.2;/*padding-top:5px !important;*/}                 /* Button s URL */
+  .url-name span:first-child {font-size:.7em; font-weight:300;}               /* Button s URL – format*/
+  .url-name span.twemoji {vertical-align:-0px;}                               /* Button s URL – zarovnani ikony*/
+  .md-button.button_smaller {font-size:smaller; padding:1px 5px;}             /* Mensi button (bez URL) */
+
+  /* FLEXBOXY */
+  .process_container {display:flex !important; justify-content:center; align-items:center; column-gap:calc((100vw * 0.03) - 6px);} /* Kontejner pro content = FlexBox */
+  .process_container div {display:flex;}                                                                                           /* Obsah (obrazky a sipky) */
+  .process_container .process_icon {width:/*40px*/calc((100vw * 0.01) + 25px); flex-shrink:0;filter:none !important;}              /* Velikost ikony (bacha na mobily) */
+  .process_container img {max-height:150px;}
+</style>
+
+<!-- Definice sipky do FlexBoxu (pro referenci) – UZ NENI TREBA -->
+<p><svg style="display: none" version="2.0">
+  <defs>
+    <symbol id="rect-arrow-right" viewBox="0 0 24 24">
+      <path d="M5,21A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V19C21,20.11 20.1,21 19,21H5M6,13H14.5L11,16.5L12.42,17.92L18.34,12L12.42,6.08L11,7.5L14.5,11H6V13Z"
+        style="fill:var(--md-primary-fg-color)" />
+    </symbol>
+    <symbol id="caret-right" height="1em" viewBox="0 0 256 512">
+      <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z" style="fill:var(--md-primary-fg-color)" />
+    </symbol>
+  <defs>
+</svg></p>
+<h1 id="uvod-do-prace-v-prostredi-arcgis-prostorova-data-datove-zdroje">Úvod do práce v prostředí ArcGIS, prostorová data, datové zdroje</h1>
+<hr class="l1">
+
+<h2 id="cil-cviceni">Cíl cvičení</h2>
+<p>Seznámení s programem ArcGIS Pro, základní orientace v prostředí programu, přidávání dat do mapy a ovládání mapy</p>
+<hr class="l1">
+
+<h2 id="zakladni-pojmy">Základní pojmy</h2>
+<h3 id="software-pro-vyuku">Software pro výuku</h3>
+<p>Během většiny výuky bude používán program <strong>ArcGIS Pro</strong> – pokročilý desktopový geografický informační systém (GIS) vyvinutý společností <strong>Esri</strong>. Umožňuje uživatelům <strong>vytvářet</strong>, <strong>editovat</strong>, <strong>analyzovat</strong> a <strong>vizualizovat</strong> prostorová data v různých vrstvách, včetně <strong>rastrových</strong> a <strong>vektorových</strong> map, <strong>ortofotomap</strong>, <strong>digitálního výškového modelu</strong> a dalších datasetů.<br />
+Uživatelé mohou vytvářet a upravovat <strong>atributy</strong> a <strong>geometrii</strong> prvků, provádět pokročilé <strong>analýzy</strong>, vytvářet a <strong>publikovat mapové vrstvy</strong> a vytvářet <strong>interaktivní mapové aplikace</strong>. Program obsahuje také nástroje pro <strong>vizualizaci</strong> dat, tvorbu mapových prezentací a <strong>sdílení výsledků</strong> s ostatními uživateli.  </p>
+<p align="center"><img alt="" class="off-glb" src="../../assets/cviceni1/agp_logo.png#only-light" style="filter:none !important;" width="200px" />
+<img alt="" class="off-glb" src="../../assets/cviceni1/agp_logo2.png#only-dark" style="filter:none !important;" width="200px" /></p>
+<details class="note" open="open">
+<summary>&nbsp;<span style="color:#448aff">Pozn.</span></summary>
+<p>Vzhledem k vysokým pořizovacím nákladům se systém ArcGIS využívá především ve velkých firmách a orgánech státní správy. V menších podnicích je rozšířenější jeho open source alternativa QGIS (tomu bude věnována pozornost v závěru kurzu).</p>
+</details>
+<h3 id="prostorova-gis-data">Prostorová (GIS) data</h3>
+<p>Geografický informační systém (GIS) využívá obecně jakákoliv data obsahující <strong>prostorovou (polohovou) informaci</strong>. Poloha může být reprezentována nejen kombinací souřadnic (<em>X + Y</em>, <em>šířka + délka</em> aj.), ale také např. adresou (o libovolné podrobnosti). Doplňkem k polohové informaci obvykle bývá připojena jakákoliv další informace formou atributů v <strong>atributové tabulce</strong>.</p>
+<p align="center" style="margin-bottom:0px;"><a class="glightbox" href="../../assets/cviceni1/img_28.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_28.png" style="width:80%;" /></a></p>
+<figcaption>Schematická ukázka prostorových dat a k nim přiřazených atributových tabulek</figcaption>
+
+<p><strong>Ukládání prostorových dat</strong>: Data lze ukládat mnoha různými způsoby. Datových formátů existuje mnoho, pro začátek uvedeme některé základní.</p>
+<ul>
+<li><strong>Shapefile</strong>: formát od spol. <em>Esri</em> s převážně otevřenou specifikací, obsahuje geometrii a vlastnosti (atributy) prostorových prvků, v současnosti asi nejpoužívanější, přestože má mnoho nevýhod a z dnešního pohledu je poněkud zastaralý, jedna z charakteristik formátu je povinné rozdělení do více souborů (<code>.shp</code>, <code>.shx</code> a <code>.dbf</code>, příp. další nepovinné), což přináší obtíže při přesouvání, kopírování apod.</li>
+<li><strong>Geodatabáze (GDB)</strong>: nativní datová struktura systému <em>ArcGIS</em> – primární datový formát pro správu a editaci dat, obsahuje kolekci datasetů různých typů (vektor, rastr i jiné), zároveň dokáže uchovávat data o datové integritě (domény, subtypy apod.) nebo topologii</li>
+<li><strong>GeoJSON</strong>: otevřený standard reprezentující vektorová data a přiřazené atributy, založen na formátu <code>JSON</code> a je tedy uživatelsky čitelný a velmi rozšířený</li>
+<li><strong>GML / KML</strong>: podobně jako GeoJSON – otevřený standard reprezentující vektorová data a přiřazené atributy, založen na formátu <code>XML</code>, tedy opět uživatelsky čitelný</li>
+<li><strong>GeoPackage (GPKG)</strong>: relativně nový formát <em>standardu OGC</em>, podporuje vektorová i rastrová data, překonává mnoho limitů formátu <code>Shapefile</code> (např. se jedná o pouze 1 soubor), výchozí formát systému <em>QGIS</em></li>
+<li><strong>CSV</strong>: sice není formátem přímo určeným pro prostorová data, nicméně často se jako výměnný formát používá, soubor obsahuje pouze atributy, z nichž některé mohou reprezentovat prostorovou složku (souřadnice či adresu) – tu pak GIS software rozpozná a polohově vizualizuje</li>
+</ul>
+<p>Ve výčtu chybí některé <strong>rastrové formáty</strong>, těm se bude výuka věnovat v průběhu pozdějších cvičení.</p>
+<hr class="l1">
+
+<h2 id="napln-cviceni">Náplň cvičení</h2>
+<h3 id="spusteni-a-zakladni-orientace-v-programu">Spuštění a základní orientace v programu</h3>
+<p>Při spuštění probíhá ověření licence přes příslušnost k organizaci (ČVUT v Praze) – pomocí přihlášení k univerzitnímu účtu. Adresa (URL) pro ČVUT je <em>ctuprague.maps.arcgis.com</em> – poté proběhne automatické přesměrování na stránku s univerzitním přihlášením (ve formátu <em>username@cvut.cz</em> a heslo to KOSu).</p>
+<div class="process_container">
+  <div class="process_image"><iframe src="https://www.youtube.com/embed/8nDVpVmxM-0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <div class="process_image"><a class="glightbox" href="../assets/cviceni1/img_01.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="../assets/cviceni1/img_01.png"></a></div>
+</div>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>RIBBON</strong></td>
+      <td>nabídka funkcí programu (prvek shodný s jinými programy, např. Microsoft Word), nabídka se kontextově mění podle akcí uživatele</td>
+    </tr>
+    <tr>
+      <td><strong>PANE</strong></td>
+      <td>panely a vlastnosti funkcí, mnoho funkcí spouští svůj Pane, přes který se daná funkce ovládá, např. Obsah mapy (Contents), Symbologie</td>
+    </tr>
+    <tr>
+      <td><strong>VIEW</strong></td>
+      <td>okno s mapou (2D) nebo scénou (3D)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_02.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_02.png" /></a>
+<a class="glightbox" href="../../assets/cviceni1/img_03.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_03.png" /></a></p>
+<figcaption>Všechny VIEWs a PANEs jsou dokovatelné – je možné je libovolně přemisťovat po obrazovce a přichytávat k ostatním prvkům</figcaption>
+
+<!-- :fontawesome-brands-youtube:{: style="color: #EE0F0F" } [__Working with Panes in ArcGIS Pro__](https://www.youtube.com/watch?v=qNDwVJV_kFk).
+{: align=center } -->
+
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://www.youtube.com/watch?v=qNDwVJV_kFk" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Working with Panes in ArcGIS Pro</a></p>
+<hr />
+<p><br></p>
+<div style="text-align:center;font-weight:bold;text-decoration:underline">Další zdroje:</div>
+
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary url-name" href="https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm" target="_blank"><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> pro.arcgis.com</span><br>Introduction to ArcGIS Pro</a>
+<a class="md-button md-button--primary url-name" href="https://pro.arcgis.com/en/pro-app/latest/get-started/introducing-arcgis-pro.htm" target="_blank"><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> pro.arcgis.com</span><br>Introducing ArcGIS Pro</a></p>
+<hr class="l1">
+
+<h3 id="pridani-dat-do-mapy">Přidání dat do mapy</h3>
+<p style="display:flex !important; justify-content:flex-start; align-items:center;"><strong>Vytvoření mapy</strong>:&nbsp;<em>Insert → New Map</em>
+<a class="glightbox" href="../../assets/cviceni1/img_09.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_09.png" style="margin-left:calc((100vw * 0.03) - 6px)" /></a></p>
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/projects/add-maps-to-a-project.htm#GUID-660CA711-919A-44B0-952A-F2054937077B" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Create a map or scene</a></p>
+<hr />
+<p><strong>Přidání dat do mapy</strong>: <em>Map → Add Data → Data → vybrat soubor...</em></p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_10.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_11.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_12.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_12.png" /></a></p>
+<figcaption>Pokud se soubor ve struktuře neobjevuje, lze dialog obnovit klávesou F5</figcaption>
+
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/add-layers-to-a-map.htm#ESRI_SECTION2_1C48753A1FD546F385580EF9197DBB8C" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Add data from the Add Data dialog box</a></p>
+<hr />
+<p>Aby pro procházení dat nebylo nutné pokaždé procházet adresářovou strukturu, hodí se si adresáře s daty <em>připojit do projektu</em>.</p>
+<p><strong>Připojení adresáře do projektu</strong>: V <em>Catalog Pane</em> (<em>View → Catalog Pane</em>) přes pravé tl. myši na "<em>Folders</em>" vybrat "<em>Add Folder Connection</em>" → vložit nebo zvolit cestu... → data ve složce přetáhnout (Drag&amp;Drop) do prostoru mapy</p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_05.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_05.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_04.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_06.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_06.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_23.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_23.png" /></a></p>
+<figcaption>Cesta ke zvolenému adresáři zůstane v nabídce mezi položkami "Folders". Adresář nemusí být lokální, lze takto připojit i např. fakultní disk H:\.</figcaption>
+
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/projects/connect-to-a-folder.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Connect to a folder</a>
+<a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/projects/the-project-pane.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> The Project Pane</a></p>
+<hr />
+<p>...totéž lze udělat s geodatabází. V geodatabázi jsou data uložena efektivněji, nelze do ní však vložit cokoli.</p>
+<p><strong>Připojení geodatabáze do projektu</strong>: V <em>Catalog Pane</em> (<em>View → Catalog Pane</em>) přes pravé tl. myši na "<em>Databases</em>" vybrat "<em>Add Database</em>" → vložit nebo zvolit cestu ke geodatabázi... → data ve složce přetáhnout (Drag&amp;Drop) do prostoru mapy</p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_05.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_05.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_07.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_07.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_08.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_08.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_24.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_24.png" /></a></p>
+<figcaption>Cesta ke zvolené geodatabázi zůstane v nabídce mezi položkami "Databases". Cesta opět nemusí být pouze lokální.</figcaption>
+
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/projects/connect-to-a-database.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Connect to a database</a></p>
+<hr />
+<p><strong>Pořadí vrstev</strong>: V obsahu mapy (<em>Contents Pane</em>) se zobrazují všechny vrstvy obsažené v mapě. Zaškrtávacím políčkem vlevo lze jednotlivým vrstvám přepínat viditelnost. Výměnou pořadí vrstev v obsahu se změní jejich pořadí vykreslování v mapě.</p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_29.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_30.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_30.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_31.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_31.png" /></a></p>
+<figcaption>Contents Pane a změna pořadí a přepínání viditelnosti vrstev</figcaption>
+
+<hr />
+<p><strong>Nastavení (vlastnosti) mapy</strong>: V <em>Contents Pane</em> (Obsah) přes pravé tl. myši na název mapy vybrat "<em>Properties</em>"</p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_21.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_21.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_22.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_22.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_25.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_25.png" /></a></p>
+<p>Pro začátek jsou zajímavé tyto položky:</p>
+<ul>
+<li>
+<p><strong>Záložka "<em>General</em>"</strong>:</p>
+<ul>
+<li><strong>Name</strong> (Název mapy)</li>
+<li><strong>Reference scale</strong> (Referenční měřítko): Zafixuje velikost mapové symbologie pro zadané měřítko. 
+<a align="right" class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/map-reference-scales.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Map reference scales</a></li>
+<li><strong>Rotation</strong>: Úhel natočení mapy</li>
+</ul>
+</li>
+<li>
+<p><strong>Záložka "<em>Coordinate systems</em>"</strong>: Informace o souřadnicovém systému zobrazení mapy (zvlášť pro polohu a pro výšku).</p>
+<ul>
+<li style="color:#888;font-size:smaller; line-height:1.1;"><strong>POZOR</strong>, pokud se souř. systém <strong>vložených dat</strong> liší od systému <strong>mapy</strong>, jsou data <strong>dočasně</strong> převedena do souř. systému <strong>mapy</strong>. Jedná se však o tzv. <strong>On-the-fly</strong> transformaci, která je pro kombinaci některých souř. systémů <strong>zjednodušená</strong> a data na sebe nemusí správně navazovat. Tato situace se <strong>nedoporučuje</strong>, neboť může přinést <strong>nepřesné výsledky</strong> mapové vizualizace i datových analýz. <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/projection-on-the-fly-and-geographic-transformations"><strong>Podrobnější informace</strong></a></li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<hr class="l1">
+
+<h3 id="kde-ziskat-data">Kde získat data</h3>
+<p><strong>Lokálně uložené soubory</strong>:  přístup přes systémovou cestu</p>
+<p align="center" style="font-size:smaller;"><em>C:\Users\Student1\Documents\Geodatabase.gdb\Layer1</em><br />
+<em>\\data.fsv.cvut.cz\Shares\K155\Public\data\PragueRoads.gdb</em></p>
+<p><strong>Data online ke stažení</strong>: stažení z libovolného zdroje na lokální disk ve formě souborů, dále shodný přístup jako s lokálně uloženými soubory (viz výše)</p>
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://www.arcgis.com/home/item.html?id=16fd9804dac04020938452a77c1ed350" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> ArcČR</a>
+<a class="md-button md-button--primary button_smaller" href="https://www.geoportalpraha.cz/cs/data/otevrena-data/seznam" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Geoportal Praha</a>
+<a class="md-button md-button--primary button_smaller" href="https://data.brno.cz/explore" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Geoportal data.Brno</a>
+<a class="md-button md-button--primary button_smaller" href="https://gis-aopkcr.opendata.arcgis.com/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> otevřená data AOPK</a></p>
+<p style="color:#888"><strong>Připojení streamovaných dat</strong>: <em>bude součástí budoucích cvičení</em></p>
+<ul>
+<li style="color:#888;font-size:smaller; line-height:1.1;">připojení datových služeb přes URL adresu, nevyžaduje ruční lokální ukládání, existuje více standardů pro poskytování těchto služeb</li>
+</ul>
+<p><br></p>
+<hr class="l1">
+
+<h3 id="ovladani-mapy">Ovládání mapy</h3>
+<p><strong>Explore Tool</strong>: Pohyb v mapě a vyvolávání pop-upů (vyskakovacích oken), funkce tlačítek myši viz obr.</p>
+<ul>
+<li><strong>Pop-up</strong> (Vyskakovací okno): Je jedním ze základních prvků grafického prostředí GIS aplikací. Jeho (nejčastějším) účelem je poskytnout rychlý náhled informací o daném prvku po kliknutí na jeho geometrii. Podoba okna je ale konfigurovatelná a nástroje pro úpravu velice variabilní. Ve výchozím stavu pop-up zobrazuje výpis atributů ve formě tabulky (obr.).
+<a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/pop-ups.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Pop-ups</a></li>
+<li><strong>Měřítko mapy</strong>: Udává poměr zmenšení mapy vzhledem ke skutečnosti. V rohu mapového okna (obr.) lze vybrat z nabízených měřítek nebo i nastavit libovolnou vlastní hodnotu.
+<a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/map-scales-and-scale-properties.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Map scales and scale properties</a></li>
+</ul>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_13.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_13.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_16.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_16.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_26.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_26.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_27.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_27.png" /></a></p>
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/navigation-in-arcgis-pro.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Navigation</a>
+<a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/get-started/navigate-your-data.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Navigate maps and scenes</a></p>
+<hr />
+<p><strong>Select Tool</strong>: Pohyb v mapě a interaktivní vybírání prvků kurzorem. Zrušení výběru viz obr.</p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_14.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_14.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_17.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_17.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_18.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_32.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_32.png" /></a></p>
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/select-features-interactively.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Select features interactively</a>
+<a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/editing/select-features-for-editing.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Select features for editing</a></p>
+<hr />
+<p><strong>Measure Tool</strong>: Interaktivní měření vzdáleností, úhlů apod.</p>
+<p class="process_container"><a class="glightbox" href="../../assets/cviceni1/img_15.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_15.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_19.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_19.png" /></a>
+<img alt="" class="off-glb process_icon" src="../../assets/cviceni1/arrow.svg" />
+<a class="glightbox" href="../../assets/cviceni1/img_20.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../../assets/cviceni1/img_20.png" /></a></p>
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary button_smaller" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/measure.htm" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> Measure</a></p>
+<p><br></p>
+<hr class="l1">
+
+<p><br></p>
+<div style="text-align:center;font-weight:bold;text-decoration:underline">Doplňkové zdroje:</div>
+
+<p align="center" style="display:flex; justify-content:center; align-items:center; column-gap:20px; row-gap:10px; flex-wrap:wrap;"><a class="md-button md-button--primary url-name" href="https://pro.arcgis.com/en/pro-app/latest/get-started/arcgis-pro-keyboard-shortcuts.htm" target="_blank"><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> pro.arcgis.com</span><br>ArcGIS Pro keyboard shortcuts</a>
+<a class="md-button md-button--primary url-name" href="https://www.esri.com/content/dam/esrisites/en-us/media/pdf/g526942-arcgis-pro-kybrd-shrtct-FINAL.pdf" target="_blank"><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span> PDF</span><br>ArcGIS Pro shortcuts</a></p>
+<p><br></p>
+<hr class="l1">
+
+<h2 id="uloha-dodelat">Úloha (DODĚLAT!!)</h2>
+<ul>
+<li>Najít a stáhnout data z konkrétního geoportálu (nebo něco připojit nebo obojí) v .shp</li>
+<li>Nastavit mapě ref. měřítko a rotaci</li>
+<li>Nastavit pořadí vrstev</li>
+<li>Nastavit přesné měřítko</li>
+<li>Vybrat některé konkrétní prvky (pár konkrétně zadaných)</li>
+<li>Screenshot mapy splňující všechny výše popsané vlastnosti</li>
+<li>Screenshot pop-upu nad zadaným prvkem</li>
+<li>Napsat vzdálenost mezi konkrétními dvěma prvky</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br></p>
+<!-- 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<hr class="l1">
+
+<span style="font-size:50px;text-transform:uppercase;font-weight:800;">Test nadpisů:</span>
+
+# Nadpis 1
+
+## Nadpis 2
+
+### Nadpis 3
+
+#### Nadpis 4
+
+##### Nadpis 5
+
+###### Nadpis 6
+
+...další text...
+
+ -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Zpět na začátek
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://geomatics.fsv.cvut.cz" target="_blank">Katedra geomatiky</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;2023
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/CTUGeomatics" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/geomatics.ctu" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/geomatics.ctu" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Zkop\u00edrov\u00e1no do schr\u00e1nky", "clipboard.copy": "Kop\u00edrovat do schr\u00e1nky", "search.result.more.one": "1 dal\u0161\u00ed na t\u00e9to str\u00e1nce", "search.result.more.other": "# v\u00edce na t\u00e9to str\u00e1nce", "search.result.none": "Nenalezeny \u017e\u00e1dn\u00e9 dokumenty", "search.result.one": "Nalezen\u00fd dokument: 1", "search.result.other": "Nalezen\u00e9 dokumenty: #", "search.result.placeholder": "Pi\u0161te co se m\u00e1 vyhledat", "search.result.term.missing": "Chyb\u011bj\u00edc\u00ed", "select.version": "Vyberte verzi"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
